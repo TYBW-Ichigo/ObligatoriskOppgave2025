@@ -6,7 +6,10 @@
 <h3>Slett en student</h3>
 
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return bekreft()">
-  Brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
+  Brukernavn <select name="brukernavn" id="brukernavn">
+    <option value="">velg brukernavn</option>
+    <?php include("dynamiske-funksjoner.php"); listeboksbrukernavn(); ?> 
+  </select>  <br/>
   <input type="submit" value="Slett student" name="slettStudentKnapp" id="slettStudentKnapp" /> 
 </form>
 
