@@ -20,7 +20,7 @@
       $etternavn=$_POST ["etternavn"];
       $klassekode=$_POST ["klassekode"];
 
-      if (!$brukernavn || !$fornavn || !$etternavn || !klassekode)
+      if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode)
         {
           print ("brukernavn, fornavn, etternavn og klassekode m&aring; fylles ut");
         }
