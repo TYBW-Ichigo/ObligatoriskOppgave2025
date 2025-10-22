@@ -1,6 +1,8 @@
 body {
     background-color: #92a8d1;
-    position: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .container {
