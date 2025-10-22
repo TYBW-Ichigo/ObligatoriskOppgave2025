@@ -1,15 +1,8 @@
 body {
     background-color: #92a8d1;
-}
-
-.liste1 {
-    text-align: center;
-]
-
-.liste2 {
-    text-align: center;
-]
-
-.info {
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
+
+
