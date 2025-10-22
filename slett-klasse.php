@@ -3,42 +3,34 @@
 
 <script src="funksjoner.js"> </script>
 
-<h3>Slett en klasse</h3>
+<h3>Slett klasse</h3>
 
 <form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onSubmit="return bekreft()">
-  Klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
+  Klasse <select name="klassekode" id="klassekode">
+    <option value="">velg klassekode</option>
+    <?php include("dynamiske-listebokser.php"); listeboksklassekode(); ?> 
+  </select>  <br/>
   <input type="submit" value="Slett klasse" name="slettKlasseKnapp" id="slettKlasseKnapp" /> 
 </form>
 
 <?php
   if (isset($_POST ["slettKlasseKnapp"]))
-    {	
-      $klassekode=$_POST ["klassekode"];
+    {
+      $klassekode=$_POST ["klassekode"];	  
 	  
-	  if (!$klassekode)
+      if (!$klassekode)
         {
-          print ("Klassekode m&aring; fylles ut");
+          print ("Det er ikke valgt en klassekode"); 
+
         }
       else
-        {
+        {	  		 
           include("db-tilkobling.php");  
-
-          $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
-          $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-          $antallRader=mysqli_num_rows($sqlResultat); 
-
-          if ($antallRader==0) 
-            {
-              print ("Klassen finnes ikke");
-            }
-          else
-            {	  
-              $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
-              mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
-              
+	
+          $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
+          mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
 		
-              print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
-            }
-        }
+          print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
+        }	
     }
 ?> 
