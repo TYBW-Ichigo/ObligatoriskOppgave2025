@@ -20,7 +20,7 @@ function listeboksklassekode()
     }
 }
 
-function listeboksbrukernavn()
+function listeboksBrukernavn()
 {
   include("db-tilkobling.php");  
       
