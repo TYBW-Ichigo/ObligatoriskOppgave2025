@@ -22,14 +22,13 @@
         {
           print ("Det er ikke valgt en klassekode"); 
         }
-		
-		$sjekk ="SELECT * FROM student WHERE klassekode='$klassekode';";
+      	$sjekk ="SELECT * FROM student WHERE klassekode='$klassekode';";
 		$resultat = mysqli_query($db, $sjekk);
 		
 		if (mysqli_num_rows($resultat) > 0) {
 			print("Kunne ikke slette klasse, fordi det er studenter der")
 		}
-      else
+		else
         {	  		 
           include("db-tilkobling.php");  
 	
