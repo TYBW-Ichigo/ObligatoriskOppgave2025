@@ -28,7 +28,7 @@
 			$resultat = mysqli_query($db, $sjekk);
 		
 		if (mysqli_num_rows($resultat) > 0) {
-			print("Kunne ikke slette klasse, fordi det er studenter der")
+			print("Kunne ikke slette klasse, fordi det er studenter der");
 		}
 		else
         {	  		 
