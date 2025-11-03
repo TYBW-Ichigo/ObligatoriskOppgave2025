@@ -39,4 +39,5 @@
           print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode  <br />");
         }	
     }
+}
 ?> 
